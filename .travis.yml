@@ -3,21 +3,20 @@ services:
   - docker
 
 before_install:
-  - docker build -t puboe/react-client-test -f ./client/Dockerfile.dev ./client
+  - docker build -t pablodu92/react-client-test -f ./client/Dockerfile.dev ./client
       
 script:
-  - docker run -e CI=true puboe/react-client-test npm test
+  - docker run -e CI=true pablodu92/react-client-test npm test
 
 after_success:
-  - docker build -t puboe/docker-fibonacci-client ./client
-  - docker build -t puboe/docker-fibonacci-nginx ./nginx
-  - docker build -t puboe/docker-fibonacci-server ./server
-  - docker build -t puboe/docker-fibonacci-worker ./worker
+  - docker build -t pablodu92/docker-fibonacci-client ./client
+  - docker build -t pablodu92/docker-fibonacci-nginx ./nginx
+  - docker build -t pablodu92/docker-fibonacci-server ./server
+  - docker build -t pablodu92/docker-fibonacci-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "DOCKER_ID" --password-stdin
   # Push images to docker hub
-  - docker push puboe/docker-fibonacci-client
-  - docker push puboe/docker-fibonacci-nginx
-  - docker push puboe/docker-fibonacci-server
-  - docker push puboe/docker-fibonacci-worker
-  
+  - docker push pablodu92/docker-fibonacci-client
+  - docker push pablodu92/docker-fibonacci-nginx
+  - docker push pablodu92/docker-fibonacci-server
+  - docker push pablodu92/docker-fibonacci-worker
