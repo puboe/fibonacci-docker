@@ -14,7 +14,7 @@ after_success:
   - docker build -t pablodu92/docker-fibonacci-server ./server
   - docker build -t pablodu92/docker-fibonacci-worker ./worker
   # Log in to the docker CLI
-  - echo "$DOCKER_PASSWORD" | docker login -u "DOCKER_ID" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Push images to docker hub
   - docker push pablodu92/docker-fibonacci-client
   - docker push pablodu92/docker-fibonacci-nginx
