@@ -12,8 +12,8 @@ docker push pablodu92/docker-fibonacci-client:$GIT_SHA
 docker push pablodu92/docker-fibonacci-server:$GIT_SHA
 docker push pablodu92/docker-fibonacci-worker:$GIT_SHA
 
-kubectl apply -f k8s
+#kubectl apply -f k8s
 
-kubectl set image deployments/server-deployment server=pablodu92/docker-fibonacci-server:$GIT_SHA
-kubectl set image deployments/client-deployment client=pablodu92/docker-fibonacci-client:$GIT_SHA
-kubectl set image deployments/worker-deployment worker=pablodu92/docker-fibonacci-worker:$GIT_SHA
+#kubectl set image deployments/server-deployment server=pablodu92/docker-fibonacci-server:$GIT_SHA
+#kubectl set image deployments/client-deployment client=pablodu92/docker-fibonacci-client:$GIT_SHA
+#kubectl set image deployments/worker-deployment worker=pablodu92/docker-fibonacci-worker:$GIT_SHA
